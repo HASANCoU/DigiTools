@@ -1,11 +1,19 @@
 import "./App.css";
+import Banner from "./components/banner/Banner";
+import BannerBottom from "./components/banner/BannerBottom";
 import NavBar from "./components/navBar/NavBar";
 
 function App() {
   return (
     <>
-      <NavBar/>
-      <h1 className="text-center text-5xl text-red-700">Hello Bangladesh</h1>
+      <nav>
+        <NavBar/>
+      </nav>
+      <main>
+          <Banner/>
+          <BannerBottom/>
+      </main>
+      
     </>
   );
 }
