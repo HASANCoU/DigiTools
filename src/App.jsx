@@ -6,6 +6,7 @@ import NavBar from "./components/navBar/NavBar";
 import Products from "./components/productsCards/Products";
 import Footer from "./components/footer/Footer";
 import WorkFlow from "./components/main/WorkFlow";
+import Steps from "./components/main/Steps";
 
 const fetchProducts = async() =>{
   const res = await fetch("/products.json");
@@ -27,6 +28,7 @@ function App() {
               productsPromise={productsPromise}
               />
           </Suspense>
+          <Steps/>
           <WorkFlow/>
       </main>
       <footer>
