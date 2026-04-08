@@ -47,7 +47,7 @@ const NavBar = () => {
           <li>FAQ</li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end flex flex-col md:flex-row">
         <button className="btn btn-ghost rounded-full text-3xl">
           <CiShoppingCart />
         </button>

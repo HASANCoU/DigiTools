@@ -3,8 +3,8 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-[#101727] px-50 pt-30 pb-8'>
-            <div className='text-white grid grid-cols-5 gap-12'>
+        <div className='bg-[#101727] px-3 md:px-50 pt-30 pb-8'>
+            <div className='text-center text-white grid grid-cols-2 md:grid-cols-5 gap-12'>
                 <div className='space-y-4'>
                     <h1 className='text-2xl font-bold'>DigiTools</h1>
                     <p className='leading-6 text-xs'>Premium digital tools for creators, professionals, and businesses. Work smarter with our suite of powerful tools.</p>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div className='space-y-4'>
+                <div className='space-y-4 mx-auto'>
                     <h2 className='text-xl'>Social links</h2>
                     <ul className='flex gap-7'>
                         <li><a href="#"><FaFacebook/></a></li>
@@ -52,11 +52,11 @@ const Footer = () => {
                  <hr className='text-gray-500 mt-20 mb-6'></hr>
 
 
-            <div className=' grid grid-cols-2 text-[#fafafa] leading-6 text-[16px]'>
-                <div><p>© 2026 Digitools. All rights reserved.</p></div>
+            <div className=' grid grid-cols-1 md:grid-cols-2 text-[#fafafa] leading-6 text-[16px]'>
+                <div><p className='text-center md:text-left'>© 2026 Digitools. All rights reserved.</p></div>
 
                 <div>
-                    <ul className='flex justify-end gap-6 items-center'>
+                    <ul className='flex justify-end flex-col md:flex-row gap-6 items-center'>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms Of Services</a></li>
                         <li><a href="#">Cookies</a></li>
