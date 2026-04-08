@@ -1,8 +1,11 @@
-import React from "react";
+import React, { use } from "react";
+import Product from "./Product";
 
-const Products = () => {
+const Products = ({ productsPromise }) => {
+  const products = use(productsPromise);
+  console.log(products);
   return (
-    <div>
+    <div className="pb-30">
       <div className="space-y-6 w-5/12 mx-auto mb-10">
         <h1 className="text-center text-5xl font-extrabold text-[#101727]">
           Premium Digital Tools
@@ -16,11 +19,23 @@ const Products = () => {
           <button className="btn rounded-full bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 text-white">
             Products
           </button>
-          <button className="btn rounded-full  linear-text">
-            Cart (2)
-          </button>
+          <button className="btn rounded-full  linear-text">Cart (2)</button>
         </div>
       </div>
+
+      <div className="w-9/12 gap-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+        {
+          products.map((product,index)=>{
+            return(
+              <Product 
+              product={product}
+              key={index}
+              />
+            )
+          })
+        }
+      </div>
+      <div>{}</div>
     </div>
   );
 };
