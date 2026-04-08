@@ -11,7 +11,7 @@ const Steps = () => {
       <p className="text-xl text-[#627382] text-center">
         Start using premium digital tools in minutes, not hours.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 rounded-md w-8/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 rounded-md w-9/12 mx-auto">
 
         <div className="bg-[#F1F1F1] space-y-6 rounded-xl p-6 pb-12 flex flex-col justify-center">
           <div className="flex justify-end">

@@ -3,7 +3,6 @@ import Product from "./Product";
 
 const Products = ({ productsPromise }) => {
   const products = use(productsPromise);
-  console.log(products);
   return (
     <div className="pb-30">
       <div className="space-y-6 w-5/12 mx-auto mb-10">

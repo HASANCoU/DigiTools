@@ -28,7 +28,7 @@ const Product = ({ product }) => {
         {period}
       </div>
       <div className="grow">
-        <ul>
+        <ul className="font-medium text-[16px] text-[#627382]">
           {features.map((item, index) => (
             <ListItem key={index} item={item} />
           ))}

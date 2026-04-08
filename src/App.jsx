@@ -7,14 +7,21 @@ import Products from "./components/productsCards/Products";
 import Footer from "./components/footer/Footer";
 import WorkFlow from "./components/main/WorkFlow";
 import Steps from "./components/main/Steps";
+import SamplePricing from "./components/main/SamplePricing";
 
 const fetchProducts = async() =>{
   const res = await fetch("/products.json");
   return res.json();
 }
 
+const fetchPricingCard = async() =>{
+  const res = await fetch("/pricingCards.json");
+  return res.json();
+}
+
 function App() {
   const productsPromise = fetchProducts();
+  const pricingCardsPromise = fetchPricingCard();
   return (
     <>
       <nav>
@@ -23,12 +30,15 @@ function App() {
       <main>
           <Banner/>
           <BannerBottom/>
-          <Suspense fallback={<span className="loading loading-spinner loading-xs mx-auto"></span>}>
+          <Suspense fallback={<span className="loading loading-spinner loading-xs text-center"></span>}>
               <Products
               productsPromise={productsPromise}
               />
           </Suspense>
           <Steps/>
+         <Suspense fallback={<span className="loading loading-spinner loading-xs text-center"></span>}>
+           <SamplePricing pricingCardsPromise={pricingCardsPromise}/>
+         </Suspense>
           <WorkFlow/>
       </main>
       <footer>
