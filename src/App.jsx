@@ -23,6 +23,7 @@ function App() {
   const [cartState, setCartState] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [buyBtnState, setBuyBtnstate] = useState("Buy Now");
 
   const productsPromise = useMemo(() => fetchProducts(), []);
   const pricingCardsPromise = useMemo(() => fetchPricingCard(), []);
@@ -47,6 +48,8 @@ function App() {
             cartProducts = {cartProducts}
             setTotalPrice = {setTotalPrice}
             totalPrice = {totalPrice}
+            setBuyBtnstate={setBuyBtnstate}
+            buyBtnState = {buyBtnState}
 
 
           />

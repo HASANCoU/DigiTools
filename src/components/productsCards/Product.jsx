@@ -4,7 +4,8 @@ import ListItem from "./ListItem";
 
 
 
-const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice }) => {
+const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice}) => {
+  const isInCart = cartProducts.some(item => item.id === product.id);
   const { name, description, icon, tagType, period, price, features } = product;
   const handleBuyNowBtn = ({product}) =>{
   setCartProducts([...cartProducts,product]);
@@ -43,7 +44,7 @@ const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice
           ))}
         </ul>
       </div>
-      <button className="btn btn-block text-white rounded-full font-bold bg-linear-to-r from-purple-600 via-purple-800 to-purple-900" onClick={()=>handleBuyNowBtn({product})}>Buy Now</button>
+      <button className="btn btn-block text-white rounded-full font-bold bg-linear-to-r from-purple-600 via-purple-800 to-purple-900" onClick={()=>handleBuyNowBtn({product})}>{isInCart?"Added To Cart" : "Buy Now"}</button>
     </div>
   );
 };

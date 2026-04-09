@@ -8,8 +8,11 @@ const CartsContainer = ({ cartProducts,setCartProducts,setTotalPrice,totalPrice 
         const newPrice = totalPrice-cartProduct.price;
         setTotalPrice(newPrice);
     }
+    const handleBtnProceed = () =>{
+        setCartProducts([]);
+    }
   return (
-    <div className="w-11/12 mx-auto border border-gray-100 rounded-xl p-5 md:p-20 bg-gray-20">
+    <div className="w-11/12 mx-auto border border-gray-100 rounded-xl p-5 md:p-20 bg-gray-50">
       {cartProducts.length ? (
         <div className="">
           {cartProducts.map((cartProduct) => {
@@ -37,7 +40,7 @@ const CartsContainer = ({ cartProducts,setCartProducts,setTotalPrice,totalPrice 
             <h2 className="font-bold">${totalPrice}</h2>
           </div>
           <div className="px-5">
-            <button className="btn btn-block  bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 rounded-full text-white">Proceed to Checkout</button>
+            <button className="btn btn-block  bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 rounded-full text-white" onClick={handleBtnProceed}>Proceed to Checkout</button>
           </div>
         </div>
       ) : (

@@ -10,6 +10,8 @@ const Products = ({
   setCartProducts,
   totalPrice,
   setTotalPrice,
+  buyBtnState,
+  setBuyBtnstate
 }) => {
   const products = use(productsPromise);
 
@@ -57,6 +59,8 @@ const Products = ({
                 cartProducts={cartProducts}
                 setTotalPrice={setTotalPrice}
                 totalPrice={totalPrice}
+                setBuyBtnstate = {setBuyBtnstate}
+                buyBtnState = {buyBtnState}
               />
             );
           })}
