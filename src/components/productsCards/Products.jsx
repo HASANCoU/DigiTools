@@ -1,8 +1,24 @@
 import React, { use } from "react";
 import Product from "./Product";
+import CartsContainer from "./CartsContainer";
 
-const Products = ({ productsPromise }) => {
+const Products = ({
+  productsPromise,
+  setCartState,
+  cartState,
+  cartProducts,
+  setCartProducts,
+  totalPrice,
+  setTotalPrice,
+}) => {
   const products = use(productsPromise);
+
+  const handleCartButton = () => {
+    setCartState(true);
+  };
+  const handleHomeButton = () => {
+    setCartState(false);
+  };
   return (
     <div className="pb-30">
       <div className="space-y-6 w-5/12 mx-auto mb-10">
@@ -15,26 +31,44 @@ const Products = ({ productsPromise }) => {
         </h5>
 
         <div className="text-center ">
-          <button className="btn rounded-full bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 text-white">
+          <button
+            className={`btn rounded-full ${!cartState ? "bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 text-white" : "bg-white text-purple-700"} `}
+            onClick={handleHomeButton}
+          >
             Products
           </button>
-          <button className="btn rounded-full  linear-text">Cart (2)</button>
+          <button
+            className={`btn rounded-full ${cartState ? "bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 text-white" : "bg-white text-purple-700"}`}
+            onClick={handleCartButton}
+          >
+            Cart ({cartProducts.length})
+          </button>
         </div>
       </div>
 
-      <div className="w-9/12 gap-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
-        {
-          products.map((product,index)=>{
-            return(
-              <Product 
-              product={product}
-              key={index}
+      {!cartState ? (
+        <div className="w-9/12 gap-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+          {products.map((product, index) => {
+            return (
+              <Product
+                product={product}
+                key={index}
+                setCartProducts={setCartProducts}
+                cartProducts={cartProducts}
+                setTotalPrice={setTotalPrice}
+                totalPrice={totalPrice}
               />
-            )
-          })
-        }
-      </div>
-      <div>{}</div>
+            );
+          })}
+        </div>
+      ) : (
+        <CartsContainer
+          cartProducts={cartProducts}
+          setCartProducts={setCartProducts}
+          setTotalPrice={setTotalPrice}
+          totalPrice={totalPrice}
+        />
+      )}
     </div>
   );
 };

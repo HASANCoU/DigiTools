@@ -1,15 +1,24 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-const Product = ({ product }) => {
+
+
+
+const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice }) => {
   const { name, description, icon, tagType, period, price, features } = product;
+  const handleBuyNowBtn = ({product}) =>{
+  setCartProducts([...cartProducts,product]);
+  const newPrice = totalPrice+price;
+  setTotalPrice(newPrice);
+  console.log(totalPrice);
+}
   const tagClass =
   tagType === "Best Seller"
     ? "text-[#BB4D00] bg-[#FEF3C6]"
     : tagType === "Popular"
     ? "text-purple-600 bg-[#e1e7ff]"
     : "text-[#0a883e] bg-[#dbfce7]";
-
+    
   return (
     <div className="border border-[#bbcad7] rounded-md p-6 flex flex-col h-full space-y-4">
       <div className="flex justify-end">
@@ -34,7 +43,7 @@ const Product = ({ product }) => {
           ))}
         </ul>
       </div>
-      <button className="btn btn-block text-white rounded-full font-bold bg-linear-to-r from-purple-600 via-purple-800 to-purple-900">Buy Now</button>
+      <button className="btn btn-block text-white rounded-full font-bold bg-linear-to-r from-purple-600 via-purple-800 to-purple-900" onClick={()=>handleBuyNowBtn({product})}>Buy Now</button>
     </div>
   );
 };
