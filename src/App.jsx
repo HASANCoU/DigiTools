@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import WorkFlow from "./components/main/WorkFlow";
 import Steps from "./components/main/Steps";
 import SamplePricing from "./components/main/SamplePricing";
+import { ToastContainer } from "react-toastify";
 
 const fetchProducts = async () => {
   const res = await fetch("/products.json");
@@ -23,14 +24,14 @@ function App() {
   const [cartState, setCartState] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [buyBtnState, setBuyBtnstate] = useState("Buy Now");
 
   const productsPromise = useMemo(() => fetchProducts(), []);
   const pricingCardsPromise = useMemo(() => fetchPricingCard(), []);
   return (
     <>
+    <ToastContainer/>
       <nav>
-        <NavBar />
+        <NavBar cartProducts={cartProducts} />
       </nav>
       <main>
         <Banner />
@@ -48,8 +49,6 @@ function App() {
             cartProducts = {cartProducts}
             setTotalPrice = {setTotalPrice}
             totalPrice = {totalPrice}
-            setBuyBtnstate={setBuyBtnstate}
-            buyBtnState = {buyBtnState}
 
 
           />

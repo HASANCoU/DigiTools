@@ -1,6 +1,6 @@
 import React from "react";
 import ListItem from "./ListItem";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 
 
@@ -23,8 +23,8 @@ const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice
     : "text-[#0a883e] bg-[#dbfce7]";
     
   return (
+    
     <div className="border border-[#bbcad7] rounded-md p-6 flex flex-col h-full space-y-4">
-      <ToastContainer/>
       <div className="flex justify-end">
         {" "}
         <h2 className={`text-[14px] font-medium p-2 rounded-full inline-block text-right ${tagClass}`}>
@@ -47,7 +47,7 @@ const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice
           ))}
         </ul>
       </div>
-      <button className="btn btn-block text-white rounded-full font-bold bg-linear-to-r from-purple-600 via-purple-800 to-purple-900" onClick={()=>handleBuyNowBtn({product})}>{isInCart?"Added To Cart" : "Buy Now"}</button>
+      <button className={`btn ${isInCart?"bg-green-600" : "bg-linear-to-r from-purple-600 via-purple-800 to-purple-900"} btn-block text-white rounded-full font-bold `} onClick={()=>handleBuyNowBtn({product})}>{isInCart?"Added To Cart" : "Buy Now"}</button>
     </div>
   );
 };

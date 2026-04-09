@@ -1,9 +1,9 @@
 import { CiShoppingCart } from "react-icons/ci";
 import React from "react";
 
-const NavBar = () => {
+const NavBar = ({cartProducts}) => {
   return (
-    <div className="navbar bg-base-100 shadow-sm md:px-10 lg:px-20 border-b-2 border-sky-500 border">
+    <div className="fixed top-0 navbar bg-base-100 shadow-sm md:px-10 lg:px-20 border-b-2 border-sky-500 border">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +49,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-end flex flex-col md:flex-row">
         <button className="btn btn-ghost rounded-full text-3xl">
-          <CiShoppingCart />
+          <CiShoppingCart /> <h3 className="z-10 text-xl relative text-yellow-600 font-bold -top-2.5 right-4">{cartProducts.length? `${cartProducts.length}`:``}</h3>
         </button>
         <button className="btn btn-ghost font-bold rounded-full mr-3">Login</button>
         <button className="btn rounded-full bg-linear-to-r from-purple-600 via-purple-800 to-purple-900 text-white">
