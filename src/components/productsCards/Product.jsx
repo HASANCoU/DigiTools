@@ -1,5 +1,6 @@
 import React from "react";
 import ListItem from "./ListItem";
+import { toast, ToastContainer } from "react-toastify";
 
 
 
@@ -7,11 +8,12 @@ import ListItem from "./ListItem";
 const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice}) => {
   const isInCart = cartProducts.some(item => item.id === product.id);
   const { name, description, icon, tagType, period, price, features } = product;
+
   const handleBuyNowBtn = ({product}) =>{
   setCartProducts([...cartProducts,product]);
   const newPrice = totalPrice+price;
   setTotalPrice(newPrice);
-  console.log(totalPrice);
+  toast.success(`${product.name} is Added To Cart Successfully!!`)
 }
   const tagClass =
   tagType === "Best Seller"
@@ -22,6 +24,7 @@ const Product = ({ product,cartProducts,setCartProducts,setTotalPrice,totalPrice
     
   return (
     <div className="border border-[#bbcad7] rounded-md p-6 flex flex-col h-full space-y-4">
+      <ToastContainer/>
       <div className="flex justify-end">
         {" "}
         <h2 className={`text-[14px] font-medium p-2 rounded-full inline-block text-right ${tagClass}`}>

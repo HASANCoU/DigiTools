@@ -37,7 +37,7 @@ function App() {
         <BannerBottom />
         <Suspense
           fallback={
-            <span className="loading loading-spinner loading-xs text-center"></span>
+            <div className=" w-10 mx-auto"><span className="loading loading-spinner loading-xl"></span></div>
           }
         >
           <Products

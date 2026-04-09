@@ -1,5 +1,8 @@
 import React from "react";
 import { MdHourglassEmpty } from "react-icons/md";
+import { toast, ToastContainer } from "react-toastify";
+
+
 
 const CartsContainer = ({ cartProducts,setCartProducts,setTotalPrice,totalPrice }) => {
     const handelRemoveBtn = (cartProduct) =>{
@@ -7,12 +10,15 @@ const CartsContainer = ({ cartProducts,setCartProducts,setTotalPrice,totalPrice 
         setCartProducts(newCartProducts);
         const newPrice = totalPrice-cartProduct.price;
         setTotalPrice(newPrice);
+        toast.error(`${cartProduct.name} is Removed From Cart!!!`);
     }
     const handleBtnProceed = () =>{
         setCartProducts([]);
+        toast.success(`Proceed All cart items!!`)
     }
   return (
     <div className="w-11/12 mx-auto border border-gray-100 rounded-xl p-5 md:p-20 bg-gray-50">
+      <ToastContainer/>
       {cartProducts.length ? (
         <div className="">
           {cartProducts.map((cartProduct) => {
