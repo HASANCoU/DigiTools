@@ -1,16 +1,42 @@
-# React + Vite
+# 🚀 DigiTools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Demo:** https://digitools02.netlify.app/
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Overview
 
-## React Compiler
+**DigiTools** is a modern and responsive web application that showcases a curated collection of premium digital tools. It is designed to help users discover powerful tools that improve productivity and creativity through a clean and intuitive interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🌟 1. Clean & Modern UI
+- Beautiful and responsive design
+- Smooth user experience across all devices
+- Built with Tailwind CSS for fast styling
+
+### 🛒 2. Digital Tools Collection
+- Displays premium digital products
+- Organized layout for easy browsing
+- Clear product information and pricing
+
+### ⚡ 3. Fast Performance
+- Built using Vite for lightning-fast development
+- Optimized deployment with Netlify
+- Minimal load time and smooth interactions
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ React.js  
+- 🎨 Tailwind CSS  
+- ⚡ Vite  
+- 🌐 JavaScript (ES6+)  
+- ☁️ Netlify (Hosting & Deployment)
+
+---
+
+
